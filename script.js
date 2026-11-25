@@ -5,7 +5,7 @@ const projects = [
     name: "Pipeline RCA Agent",
     role: "McLane",
     year: "2026",
-    logo: { text: "M", color: "#c8102e" },
+    logo: { img: "assets/logos/mclane.png" },
     image: "assets/projects/rca-agent.svg",
     href: null,
     description:
@@ -25,7 +25,7 @@ const projects = [
     name: "ROMO",
     role: "Code for the Community",
     year: "2026",
-    logo: { text: "R", color: "#2e9d6a" },
+    logo: { img: "assets/logos/code-for-the-community.png" },
     image: "assets/projects/romo.svg",
     href: null,
     description:
@@ -35,7 +35,7 @@ const projects = [
     name: "United2Heal",
     role: "Code for the Community",
     year: "2026",
-    logo: { text: "U2", color: "#d9485f" },
+    logo: { img: "assets/logos/code-for-the-community.png" },
     image: "assets/projects/united2heal.svg",
     href: null,
     description:
@@ -86,7 +86,7 @@ function renderProjects() {
         <div class="meta">
           <div class="meta-row">
             <span class="meta-icon">
-              <span class="logo" style="--c:${p.logo.color}">${escapeHtml(p.logo.text)}</span>
+              ${p.logo.img ? `<img class="logo" src="${p.logo.img}" alt="" />` : `<span class="logo" style="--c:${p.logo.color}">${escapeHtml(p.logo.text)}</span>`}
               <span class="arrow">${arrowSvg}</span>
             </span>
             <h3>${p.href ? `<a ${linkAttrs}>${escapeHtml(p.name)}</a>` : escapeHtml(p.name)}</h3>
